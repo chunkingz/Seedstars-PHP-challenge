@@ -1,0 +1,18 @@
+Conclusions:
+
+1. SQL Injection: Inputing the below code on an unsanitized form field would cause the deletion of the users table, 
+which is also good practice to randomize table & database names and not use conventional names to prevent guessing attacks using blind SQLi.
+chunkingz'); DROP TABLE users;--
+
+#SQL injection can be prevented by using prepared statements.
+
+2. XSS: Inputing the below code on an unsanitized form field would cause a large header to be displayed on 
+any part of an application that displays the record, which in this case would be the users table.
+<h2>hello world</h2>
+
+#XSS attacks can be prevented by sanitizing, trimming and stripping form data before saving them to the database, and escaping 
+database records before displaying them on web pages.
+
+3. CSRF:  was done with resource to a session variable.
+
+#CSRF attacks can be prevented by using sessions.
